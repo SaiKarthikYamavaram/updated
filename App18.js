@@ -3,7 +3,7 @@ import { Text, View,StyleSheet } from 'react-native';
 import ProfilePic from './components-18/profilePic'
 import Btn from './components-18/btn'
 import Close from './components-18/close'
-import Uname from './uname'
+import Uname from './components-18/uname' 
 
 export default class App extends Component{
   constructor(){

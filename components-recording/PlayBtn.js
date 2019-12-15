@@ -39,7 +39,7 @@ export default class PlayBtn extends Component{
       <TouchableOpacity onPress={()=>recording()}>
         <Text style={styles.status}> Recording </Text>
         <ImgComp/>
-        <Image source ={src2} style={styles.image,styles.left} />
+        <Image source ={src2} style={styles.image} />
       </TouchableOpacity>  
         
       </View>
