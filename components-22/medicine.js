@@ -7,18 +7,17 @@ import {
   StyleSheet,
 } from 'react-native';
 
-export default class ImageBtn extends Component {
+export default class Medicine extends Component {
   render() {
-    // var src =this.props.src
     return (
       <View>
         <TouchableOpacity
           style={styles.imgbtn}
           activeOpacity={0.5}
-          onPress={() => alert('Go to home')}>
+          onPress={() => alert('Redirecting to buy medicine...')}>
           <Image
             style={styles.icon}
-            source={require('../assets/assets-20/house.png')}
+            source={require('../assets/assets-22/medicine.jpg')}
           />
 
           <View style={styles.SeparatorLine} />
@@ -31,16 +30,15 @@ export default class ImageBtn extends Component {
 const styles = StyleSheet.create({
   imgbtn: {
     //  justifyContent:'center',
-    alignSelf: 'center',
-    width: '100%',
-    backgroundColor: 'skyblue',
-    paddingTop: 4,
-    //  paddingBottom:-4,
+    // alignSelf:'center',
+    //paddingTop: 4,
+    //paddingBottom:4,
     //  borderRadius:15,
-    elevation: 5,
   },
   icon: {
-    position: 'relative',
-    left: Dimensions.get('window').width * 0.4,
+    width: 0.2 * Dimensions.get('window').width,
+    height: 0.2 * Dimensions.get('window').height,
+    // position:'relative',
+    // left:Dimensions.get('window').width*0.4
   },
 });

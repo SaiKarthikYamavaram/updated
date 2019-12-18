@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TextInput, Text, StyleSheet, View } from 'react-native';
 
-export default class InputText extends Component {
+export default class InputTextNoAuth extends Component {
   constructor() {
     super();
     this.state = {
@@ -10,39 +10,27 @@ export default class InputText extends Component {
       touched: false,
     };
   }
-
-  setValue = () => {
-    this.setState({ val: this.value });
-    alert(this.props.reference);
+  updateProgress = () => {
+    if (this.state.val.length) {
+      this.props.progress(this.state.val);
+    }
   };
+
   render() {
     return (
       <View>
         <TextInput
-          ref={this.props.reference}
           style={styles.input}
-          onFocus={() => this.setState({ touched: true })}
+          onEndEditing={this.updateProgress}
           maxLength={30}
           placeholder={this.props.placeholder}
           textContentType={this.props.type}
-          secureTextEntry={this.props.isPassword}
           onChangeText={text => this.setState({ val: text })}
           selectionColor={'skyblue'}
           placeholderTextColor={'#ffffff'}
-          value={this.state.text}
         />
-        <Warning len={this.state.val.length} touched={this.state.touched} />
       </View>
     );
-  }
-}
-export class Warning extends Component {
-  render() {
-    if ((this.props.len < 8) & this.props.touched) {
-      return <Text> Enter Minimum of 8 characters </Text>;
-    } else {
-      return <View />;
-    }
   }
 }
 const styles = StyleSheet.create({
